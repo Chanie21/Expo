@@ -1,8 +1,10 @@
+import { Link } from "expo-router";
 import { Text, StyleSheet, ScrollView } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Index() {
-  const name: string = "Chanieeee";
+  const name: string = "Chanie";
+
   return (
     <SafeAreaView
       style={{
@@ -12,21 +14,12 @@ export default function Index() {
       }}
     >
       <ScrollView>
-        <Text style={styles.Text1}>Welcome, {name}</Text>
-        <Text style={styles.Text2}>Hello World! Expo</Text>
+        <Text className="font-semibold text-black">Welcome, {name}</Text>
+        <Text className="text-black">Hello World! Expo!</Text>
       </ScrollView>
+      <Link href={"/task"}>
+        <Text>Move to About!</Text>
+      </Link>
     </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  Text1: {
-    color: "red",
-    fontSize: 40,
-  },
-  Text2: {
-    backgroundColor: "purple",
-    color: "white",
-    fontSize: 50,
-  },
-});
